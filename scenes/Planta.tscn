@@ -1,0 +1,76 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://scripts/Planta.gd" type="Script" id=1]
+[ext_resource path="res://sprites/plantas/plant05.png" type="Texture" id=2]
+[ext_resource path="res://sprites/plantas/plant06.png" type="Texture" id=3]
+[ext_resource path="res://sprites/plantas/plant07.png" type="Texture" id=4]
+[ext_resource path="res://sprites/plantas/plant08.png" type="Texture" id=5]
+[ext_resource path="res://sprites/plantas/plant09.png" type="Texture" id=6]
+[ext_resource path="res://sprites/plantas/plant10.png" type="Texture" id=7]
+[ext_resource path="res://sprites/plantas/plant11.png" type="Texture" id=8]
+[ext_resource path="res://sprites/plantas/plant12.png" type="Texture" id=9]
+[ext_resource path="res://sprites/plantas/plant13.png" type="Texture" id=10]
+[ext_resource path="res://sprites/plantas/plant14.png" type="Texture" id=11]
+[ext_resource path="res://sprites/plantas/plant15.png" type="Texture" id=12]
+[ext_resource path="res://sprites/plantas/plant16.png" type="Texture" id=13]
+[ext_resource path="res://sprites/plantas/plant17.png" type="Texture" id=14]
+[ext_resource path="res://sprites/plantas/plant00.png" type="Texture" id=15]
+[ext_resource path="res://sprites/plantas/plant01.png" type="Texture" id=16]
+[ext_resource path="res://sprites/plantas/plant02.png" type="Texture" id=17]
+[ext_resource path="res://sprites/plantas/plant03.png" type="Texture" id=18]
+[ext_resource path="res://sprites/plantas/plant04.png" type="Texture" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "stage1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "stage2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "stage3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "stage0",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.980392, 0.0117647, 0.0117647, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.313726, 0.243137, 0.184314, 1 )
+
+[node name="Planta" type="Node2D"]
+position = Vector2( 106.993, 157.666 )
+scale = Vector2( 4, 4 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "stage0"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -23.0
+margin_top = -35.0
+margin_right = 25.0
+margin_bottom = -21.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
