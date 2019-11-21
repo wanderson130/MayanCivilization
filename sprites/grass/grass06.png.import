@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hud_1.png-d17d704ec2b29ba726f5a82e004b20b3.stex"
+path="res://.import/grass06.png-be9e0948bbe0f60e1f0472e5bd6e8a43.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/plantas/hud_1.png"
-dest_files=[ "res://.import/hud_1.png-d17d704ec2b29ba726f5a82e004b20b3.stex" ]
+source_file="res://sprites/grass/grass06.png"
+dest_files=[ "res://.import/grass06.png-be9e0948bbe0f60e1f0472e5bd6e8a43.stex" ]
 
 [params]
 
